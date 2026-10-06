@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Athira M. — Bioengineer → Product Builder</title>
+<meta name="description" content="Athira M. is a bioengineering student at VIT who turns healthcare problems into products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B1726;--bg2:#0f2033;--paper:#F4F1EA;--teal:#20B8A6;--blue:#4C7DFF;--grey:#A7B0B8;--lime:#B8D86B;--line:rgba(167,176,184,.16)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--paper);font:400 16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden;
+background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:90;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
+#glow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(32,184,166,.13),transparent 65%);transform:translate(-50%,-50%);z-index:0;left:50%;top:30%}
+a{color:inherit;text-decoration:none}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;color:var(--grey)}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.05;font-weight:700}
+section{position:relative;z-index:1;padding:110px 6vw;max-width:1280px;margin:auto}
+h2{font-size:clamp(30px,5vw,56px);margin:10px 0 40px;max-width:15em}
+p{color:#d3d8dc;max-width:62ch}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+/* nav */
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 6vw;background:rgba(11,23,38,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav b{font:700 18px "Space Grotesk"}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav ul a{font:500 12px "IBM Plex Mono";color:var(--grey);letter-spacing:.08em;transition:color .2s}
+nav ul a:hover,nav ul a.on{color:var(--teal)}
+.status{font:500 11px "IBM Plex Mono";color:var(--lime);white-space:nowrap}
+.status i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--lime);margin-right:7px;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.25}}
+@media(max-width:980px){nav ul{display:none}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;min-height:calc(100vh - 60px);padding-top:50px}
+.hero h1{font-size:clamp(54px,9vw,128px);letter-spacing:-.03em}
+.hero h2.sub{font-size:clamp(18px,2.4vw,28px);color:var(--teal);margin:18px 0 22px;font-weight:500}
+.hero .lede{font-size:20px;color:var(--paper);margin-bottom:14px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{font:500 13px "IBM Plex Mono";letter-spacing:.08em;padding:14px 22px;border:1px solid var(--teal);transition:.25s;display:inline-block}
+.btn.fill{background:var(--teal);color:var(--bg)}
+.btn:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-2px)}
+.inst{border:1px solid var(--line);background:rgba(15,32,51,.7);padding:14px;position:relative}
+.inst svg{width:100%;height:auto;display:block}
+.inst .mono{display:flex;justify-content:space-between;margin-bottom:8px}
+.wave{stroke-dasharray:6 0;animation:drift 6s linear infinite}
+@keyframes drift{to{stroke-dashoffset:-240}}
+.node{cursor:pointer;transition:.2s}.node:hover{fill:var(--lime);r:9}
+#readout{min-height:20px;color:var(--teal)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:0}}
+/* about */
+.cards4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{border:1px solid var(--line);background:rgba(15,32,51,.6);padding:26px;transition:.3s}
+.card:hover{border-color:var(--teal);transform:translateY(-4px)}
+.card svg{width:44px;height:44px;margin-bottom:16px;stroke:var(--teal);fill:none;stroke-width:1.5}
+.card h3{font-size:22px;margin-bottom:8px}
+.card p{font-size:15px;color:var(--grey)}
+/* timeline */
+.log{border-left:1px dashed var(--teal);margin-left:8px;padding-left:34px}
+.entry{position:relative;margin-bottom:46px;padding:28px;background:var(--paper);color:var(--bg);background-image:repeating-linear-gradient(transparent 0 31px,rgba(11,23,38,.07) 31px 32px)}
+.entry::before{content:"";position:absolute;left:-43px;top:34px;width:17px;height:17px;background:var(--bg);border:2px solid var(--teal);border-radius:50%}
+.entry p{color:#2b3a4a}.entry .mono{color:#4a5a6a}
+.entry h3{font-size:28px;margin:6px 0 2px}
+.entry .org{font-weight:500;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags span{font:500 12px "IBM Plex Mono";border:1px solid var(--bg);padding:5px 10px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:18px}
+.kpi{border-top:2px solid var(--teal);padding-top:8px;font:500 12px "IBM Plex Mono";color:#2b3a4a}
+.kpi b{display:block;font:700 26px "Space Grotesk";color:var(--bg)}
+/* projects */
+.proj{border:1px solid var(--line);background:linear-gradient(135deg,rgba(15,32,51,.9),rgba(11,23,38,.9));margin-bottom:22px;transition:border-color .3s}
+.proj:hover,.proj.open{border-color:var(--teal)}
+.proj button{all:unset;cursor:pointer;display:block;width:100%;padding:32px;box-sizing:border-box}
+.proj h3{font-size:clamp(34px,5vw,64px);letter-spacing:-.02em;margin:8px 0}
+.proj .t{font-size:19px;color:var(--grey);max-width:40em}
+.badge{display:inline-block;margin-top:16px;font:500 12px "IBM Plex Mono";color:var(--bg);background:var(--lime);padding:5px 10px}
+.flow{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:22px;font:500 12px "IBM Plex Mono";color:var(--teal)}
+.flow span:not(:last-child)::after{content:" → ";color:var(--grey);margin:0 6px}
+.more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s}
+.proj.open .more{grid-template-rows:1fr}
+.more>div{overflow:hidden}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;padding:0 32px 32px}
+.grid2 h4{font:500 12px "IBM Plex Mono";color:var(--blue);margin-bottom:6px;letter-spacing:.08em}
+.grid2 p{font-size:15px}
+.hint{float:right;font:500 12px "IBM Plex Mono";color:var(--teal)}
+.proj.open .hint::after{content:"CLOSE −"}.proj:not(.open) .hint::after{content:"OPEN +"}
+/* process */
+.pipe{display:flex;gap:6px;height:300px}
+.st{flex:1;border:1px solid var(--line);padding:18px 14px;transition:flex .45s,border-color .3s,background .3s;overflow:hidden;cursor:default;background:rgba(15,32,51,.5)}
+.st:hover,.st:focus{flex:4;border-color:var(--teal);background:rgba(32,184,166,.08);outline:none}
+.st b{font:500 13px "IBM Plex Mono";color:var(--teal);display:block}
+.st h3{font-size:18px;margin:8px 0;writing-mode:vertical-rl;transition:.3s}
+.st:hover h3,.st:focus h3{writing-mode:horizontal-tb}
+.st p{font-size:14px;color:var(--grey);opacity:0;transition:opacity .3s .15s;min-width:210px}
+.st:hover p,.st:focus p{opacity:1}
+@media(max-width:800px){.pipe{flex-direction:column;height:auto}.st h3{writing-mode:horizontal-tb}.st p{opacity:1;min-width:0}.st:hover{flex:1}}
+/* skills */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{font:500 12px "IBM Plex Mono";letter-spacing:.06em;color:var(--grey);background:none;border:1px solid var(--line);padding:11px 16px;cursor:pointer;transition:.2s}
+.tab[aria-selected=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:12px;min-height:130px}
+.chip{font:500 18px "Space Grotesk";padding:16px 22px;border:1px solid var(--teal);animation:in .35s both}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+/* beyond */
+.beyond{background:var(--paper);color:var(--bg);max-width:none;padding-left:calc(6vw + max(0px,(100vw - 1280px)/2));padding-right:calc(6vw + max(0px,(100vw - 1280px)/2))}
+.beyond .mono{color:#4a5a6a}.beyond p{color:#2b3a4a}
+.b3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.b3 div{padding:34px 26px 40px;color:var(--bg);transition:transform .3s}
+.b3 div:hover{transform:translateY(-8px) rotate(-.6deg)}
+.b3 h3{font-size:30px;margin-bottom:12px}
+.b3 p{color:var(--bg)}
+/* edu */
+.cred{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;border:1px solid var(--teal);padding:34px;background:rgba(15,32,51,.7);max-width:760px}
+.cred h3{font-size:30px}.cred .cg{font:700 54px "Space Grotesk";color:var(--teal)}
+/* contact */
+.contact{text-align:left;overflow:hidden}
+.contact h2{font-size:clamp(38px,7vw,96px);max-width:11em}
+.contact svg.bg{position:absolute;left:0;right:0;bottom:0;width:100%;height:160px;opacity:.35;z-index:-1}
+footer{position:relative;z-index:1;padding:26px 6vw;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(18px);transition:.7s}.rv.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+<nav>
+<a href="#top"><b>ATHIRA M.</b></a>
+<ul><li><a href="#work">WORK</a></li><li><a href="#experience">EXPERIENCE</a></li><li><a href="#about">ABOUT</a></li><li><a href="#thinking">THINKING</a></li><li><a href="#leadership">LEADERSHIP</a></li><li><a href="#contact">CONTACT</a></li></ul>
+<span class="status"><i></i>OPEN TO OPPORTUNITIES</span>
+</nav>
+
+<section class="hero" id="top">
+<div>
+<p class="mono">VIT BIOENGINEERING × AI × PRODUCT × RESEARCH</p>
+<h1>ATHIRA M.</h1>
+<h2 class="sub">BIOENGINEER × PRODUCT THINKER</h2>
+<p class="lede">Building healthcare technology from research to real-world impact.</p>
+<p>I work across bioengineering, AI, healthcare products, research and entrepreneurship, turning real clinical problems into prototypes, pitches and products.</p>
+<div class="btns"><a class="btn fill" href="#work">VIEW MY WORK</a><a class="btn" href="#contact">LET'S CONNECT</a></div>
+</div>
+<div class="inst" aria-label="Interactive diagram: a biomedical signal becoming a product">
+<div class="mono"><span>SIGNAL → SYSTEM</span><span id="readout">hover a node</span></div>
+<svg viewBox="0 0 480 400" role="img">
+<g stroke="rgba(167,176,184,.25)" fill="none"><path d="M0 120H480M0 280H480M120 0V400M360 0V400" stroke-dasharray="2 6"/></g>
+<text x="8" y="14" fill="#A7B0B8" font-family="IBM Plex Mono" font-size="9">t 0.00s  amp 0.4mV</text>
+<path class="wave" fill="none" stroke="#20B8A6" stroke-width="2" d="M0 120 L40 120 L55 120 L65 90 L75 150 L85 50 L95 140 L108 120 L150 120 L170 108 L190 120 L230 120"/>
+<path class="wave" fill="none" stroke="#4C7DFF" stroke-width="1.2" opacity=".7" d="M0 150 q15 -22 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0"/>
+<path d="M230 120 L300 120 M300 120 L330 200 M300 120 L400 90 M330 200 L400 90 M330 200 L260 250 M330 200 L400 260 M400 90 L430 150" stroke="#A7B0B8" stroke-opacity=".5" fill="none"/>
+<g fill="#20B8A6">
+<circle class="node" cx="300" cy="120" r="6" data-t="SENSOR · vibration"/>
+<circle class="node" cx="330" cy="200" r="6" data-t="EDGE AI · on-device"/>
+<circle class="node" cx="400" cy="90" r="6" data-t="INSIGHT · early flag"/>
+<circle class="node" cx="260" cy="250" r="6" data-t="USER · clinician view"/>
+<circle class="node" cx="400" cy="260" r="6" data-t="MARKET · access"/>
+<circle class="node" cx="430" cy="150" r="6" data-t="FEEDBACK · iterate"/>
+</g>
+<g transform="translate(60 290)" fill="none" stroke="#F4F1EA" stroke-opacity=".7">
+<rect width="150" height="90" rx="6"/><path d="M0 22H150M16 40H90M16 56H120M16 72H60"/><circle cx="12" cy="11" r="3" fill="#B8D86B" stroke="none"/></g>
+<text x="60" y="284" fill="#A7B0B8" font-family="IBM Plex Mono" font-size="9">WIREFRAME v0.1</text>
+<text x="300" y="320" fill="#A7B0B8" font-family="IBM Plex Mono" font-size="9">12.97°N 79.16°E · VELLORE</text>
+</svg>
+</div>
+</section>
+
+<section id="work">
+<p class="mono">FEATURED PROJECTS</p>
+<h2>Healthcare problems, turned into products.</h2>
+
+<article class="proj rv">
+<button aria-expanded="false"><span class="hint"></span>
+<p class="mono">WEARABLE HEALTHCARE / BIOMEDICAL SENSING / PRODUCT DEVELOPMENT · 2026–PRESENT</p>
+<h3>KneeWave</h3>
+<p class="t">Wearable knee cap for osteoarthritis and post-surgical monitoring. An indigenous compression sleeve with vibration sensors for early osteoarthritis detection.</p>
+<div class="flow"><span>PROBLEM</span><span>RESEARCH</span><span>SENSOR</span><span>PROTOTYPE</span><span>PRODUCT</span><span>MARKET</span></div></button>
+<div class="more"><div><div class="grid2">
+<div><h4>PROBLEM</h4><p>Osteoarthritis is usually caught late. Patients and surgeons lack simple, affordable ways to track joint health at home.</p></div>
+<div><h4>APPROACH</h4><p>Study knee vibration signals, then pick sensors that capture them reliably in a wearable form.</p></div>
+<div><h4>PROTOTYPE</h4><p>Concept taken to a working prototype of a compression sleeve with vibration sensors.</p></div>
+<div><h4>PRODUCT THINKING</h4><p>Designed around comfort, daily wear and clear outputs for patients and clinicians.</p></div>
+<div><h4>MARKET POSITIONING &amp; USP</h4><p>Positioned against existing monitoring alternatives as an indigenous, wearable option. Pitch decks and startup-program applications written to pursue funding and incubation.</p></div>
+<div><h4>FUTURE DIRECTION</h4><p>Validation studies, refined sensing, and incubation support.</p></div>
+</div></div></div>
+</article>
+
+<article class="proj rv">
+<button aria-expanded="false"><span class="hint"></span>
+<p class="mono">DIAGNOSTICS / HARDWARE / HEALTHCARE ACCESS · 2024–2025</p>
+<h3>Affordable Diagnostics</h3>
+<p class="t">A low-cost toxicity sensor that detects heavy-metal contamination in pharmaceutical products.</p>
+<span class="badge">2025 JHU HEALTH HACKATHON FINALIST</span>
+<div class="flow"><span>LAB CONCEPT</span><span>PROTOTYPE</span><span>VALIDATION</span><span>BUSINESS CASE</span></div></button>
+<div class="more"><div><div class="grid2">
+<div><h4>THE GAP</h4><p>Lab-based heavy-metal testing is out of reach in resource-constrained pharmaceutical and clinical settings.</p></div>
+<div><h4>WHAT I BUILT</h4><p>A low-cost sensor, advanced from technical concept to a demonstrable prototype.</p></div>
+<div><h4>BUSINESS CASE</h4><p>Led market framing, competitive analysis and value proposition. Affordability and ease of use are the core differentiators.</p></div>
+</div></div></div>
+</article>
+
+<article class="proj rv">
+<button aria-expanded="false"><span class="hint"></span>
+<p class="mono">DIGITAL HEALTH / AI / NEUROSCIENCE · 2025–2026</p>
+<h3>Mind Garden</h3>
+<p class="t">A gamified, consumer-facing healthcare app powered by on-device AI.</p>
+<span class="badge">2026 JHU HEALTH HACKATHON FINALIST</span></button>
+<div class="more"><div><div class="grid2">
+<div><h4>MY ROLE</h4><p>Led the bio-research thread on neurological effects to define patient-selection criteria.</p></div>
+<div><h4>PRODUCT</h4><p>Worked with clinical and biological input to shape UX and product requirements.</p></div>
+<div><h4>LINK</h4><p><a class="btn" href="https://tinyurl.com/4nn7umdz" target="_blank" rel="noopener">OPEN PROJECT</a></p></div>
+</div></div></div>
+</article>
+</section>
+
+<section id="experience">
+<p class="mono">ENGINEERING LOG</p>
+<h2>Where I've applied it.</h2>
+<div class="log">
+<div class="entry rv">
+<p class="mono">ENTRY 01 · 2024–PRESENT · REMOTE</p>
+<h3>Product Manager</h3><div class="org">XALDREK, AI-based startup</div>
+<p>Coordinated design, engineering and business stakeholders to keep the roadmap on track. Ran user interviews and competitor research before committing engineering effort. Owned go-to-market and tracked post-launch adoption.</p>
+<div class="kpis"><div class="kpi"><b data-n="7">0</b>workstreams in the loop</div><div class="kpi"><b>E2E</b>go-to-market ownership</div></div>
+<div class="tags"><span>Roadmap</span><span>User discovery</span><span>Competitor research</span><span>Requirements</span><span>Go-to-market</span><span>Post-launch analysis</span><span>Cross-functional</span></div>
+</div>
+<div class="entry rv">
+<p class="mono">ENTRY 02 · MAY–JUL 2026 · ROURKELA, INDIA</p>
+<h3>Research Intern</h3><div class="org">NIT Rourkela · Biomechanics Dept., School of Biomedical Engg.</div>
+<p>Led structured data collection and analysis for a human-performance measurement study across biomechanics, engineering and clinical stakeholders. Wrote a formal report that turned technical results into clear takeaways for non-specialists.</p>
+<div class="tags"><span>Human-performance measurement</span><span>Data collection</span><span>Data analysis</span><span>Multidisciplinary collaboration</span><span>Technical communication</span></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<p class="mono">ABOUT</p>
+<h2>The space between biology &amp; technology</h2>
+<p style="margin-bottom:36px">I'm a B.Tech Bioengineering student at VIT with experience across product management, biomechanics research, healthcare innovation and multidisciplinary projects. I look for real healthcare problems, research them, and shape them into things people can use.</p>
+<div class="cards4">
+<div class="card rv"><svg viewBox="0 0 44 44"><rect x="6" y="6" width="14" height="14"/><rect x="24" y="6" width="14" height="14"/><rect x="6" y="24" width="32" height="14"/></svg><h3>Product</h3><p>AI startup product management and cross-functional execution.</p></div>
+<div class="card rv"><svg viewBox="0 0 44 44"><path d="M2 22h8l4-12 6 26 5-20 3 6h14"/></svg><h3>Research</h3><p>Biomechanics research and technical analysis.</p></div>
+<div class="card rv"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="6"/><circle cx="8" cy="10" r="3"/><circle cx="36" cy="10" r="3"/><circle cx="22" cy="38" r="3"/><path d="M10 12l8 6M34 12l-8 6M22 28v7"/></svg><h3>Healthcare innovation</h3><p>Wearable diagnostics, low-cost sensors and AI healthcare applications.</p></div>
+<div class="card rv"><svg viewBox="0 0 44 44"><path d="M8 40V6l26 8-26 8"/></svg><h3>Leadership</h3><p>NCC, NSS, sports leadership and cultural-event management.</p></div>
+</div>
+<div class="cards4" style="margin-top:36px">
+<div class="kpi"><b data-n="3">0</b><span class="mono">PROJECTS</span></div>
+<div class="kpi"><b data-n="2">0</b><span class="mono">HACKATHON FINALS</span></div>
+<div class="kpi"><b data-n="2">0</b><span class="mono">ROLES</span></div>
+<div class="kpi"><b data-n="8.7" data-d="1">0</b><span class="mono">CGPA / 10</span></div>
+</div>
+</section>
+
+<section id="thinking">
+<p class="mono">HOW I THINK</p>
+<h2>From problem → impact</h2>
+<div class="pipe">
+<div class="st" tabindex="0"><b>01</b><h3>DISCOVER</h3><p>Spot the real problem by talking to the people who live with it.</p></div>
+<div class="st" tabindex="0"><b>02</b><h3>RESEARCH</h3><p>Read the science, benchmark competitors, study the market.</p></div>
+<div class="st" tabindex="0"><b>03</b><h3>DEFINE</h3><p>Turn findings into prioritised, metric-backed requirements.</p></div>
+<div class="st" tabindex="0"><b>04</b><h3>BUILD</h3><p>Prototype sensors, apps and systems that work.</p></div>
+<div class="st" tabindex="0"><b>05</b><h3>TEST</h3><p>Validate with data, then fix what the data shows.</p></div>
+<div class="st" tabindex="0"><b>06</b><h3>COMMUNICATE</h3><p>Pitch decks, reports and demos that non-specialists understand.</p></div>
+<div class="st" tabindex="0"><b>07</b><h3>SCALE</h3><p>Track adoption, find gaps, drive the next iteration.</p></div>
+</div>
+</section>
+
+<section id="skills">
+<p class="mono">TOOLKIT</p>
+<h2>Four systems I work in.</h2>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="chips" id="chips" aria-live="polite"></div>
+</section>
+
+<section class="beyond" id="leadership">
+<p class="mono">LEADERSHIP</p>
+<h2>Beyond the lab</h2>
+<div class="b3">
+<div style="background:#20B8A6"><h3>NCC + NSS</h3><p>NCC A and B certificate holder and NSS member (2018–2026). Led community campaigns and relief-fund drives, coordinating volunteers and resources.</p></div>
+<div style="background:#B8D86B"><h3>Sports</h3><p>State-level Kho-Kho and Kabaddi player and school sports captain. Led team strategy under pressure.</p></div>
+<div style="background:#4C7DFF;color:#fff"><h3 style="color:#fff">Cultural leadership</h3><p style="color:#fff">Performance Arts Lead, Cultural Club (2024–2026). Planned and ran events end to end.</p></div>
+</div>
+</section>
+
+<section id="education">
+<p class="mono">EDUCATION</p>
+<h2>Academic record</h2>
+<div class="cred"><div><h3>Vellore Institute of Technology</h3><p>B.Tech Bioengineering · 2023–2027</p></div><div><div class="cg">8.7</div><span class="mono">CGPA / 10</span></div></div>
+</section>
+
+<section class="contact" id="contact">
+<p class="mono">CONTACT</p>
+<h2>Have a problem worth building?</h2>
+<p>I'm interested in healthcare, biotechnology, AI and product ideas that can move beyond the lab.</p>
+<div class="btns"><a class="btn fill" href="mailto:athira.m1301@gmail.com">EMAIL ME</a><a class="btn" href="https://linkedin.com/in/athira-m-am" target="_blank" rel="noopener">LINKEDIN</a><a class="btn" href="https://github.com/athiram1301-png" target="_blank" rel="noopener">GITHUB</a></div>
+<svg class="bg" viewBox="0 0 800 160" preserveAspectRatio="none"><path class="wave" fill="none" stroke="#20B8A6" d="M0 80 L120 80 L135 80 L145 30 L155 130 L165 80 L300 80 L320 60 L340 80 L520 80 L535 80 L545 30 L555 130 L565 80 L800 80"/></svg>
+</section>
+<footer class="mono">© 2026 ATHIRA M. · 12.97°N 79.16°E</footer>
+
+<script>
+const $=(s,r=document)=>[...r.querySelectorAll(s)];
+// cursor glow
+const g=document.getElementById('glow');
+addEventListener('pointermove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+// project expand
+$('.proj button').forEach(b=>b.onclick=()=>{const p=b.parentElement,o=p.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+// node readout
+$('.node').forEach(n=>{const r=document.getElementById('readout');n.onmouseenter=()=>r.textContent=n.dataset.t;n.onmouseleave=()=>r.textContent='hover a node'});
+// skills
+const S={'PRODUCT & OPERATIONS':['KPI Tracking','Process Mapping','Resource Planning','Cross-functional Execution','Agile'],
+'RESEARCH & ANALYSIS':['Root Cause Analysis','Data-driven Decision Making','Market Research','Competitive Research','Qualitative Research'],
+'TECHNOLOGY':['Python','SQL','Excel','Figma','SolidWorks','Notion','PowerPoint','Mendeley'],
+'BIOENGINEERING':['Biomechanics','Wearable Healthcare','Biomedical Sensors','Healthcare Innovation']};
+const tabs=document.getElementById('tabs'),chips=document.getElementById('chips');
+function show(k){$('.tab').forEach(t=>t.setAttribute('aria-selected',t.textContent===k));
+chips.innerHTML=S[k].map((c,i)=>`<span class="chip" style="animation-delay:${i*50}ms">${c}</span>`).join('')}
+Object.keys(S).forEach(k=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.textContent=k;b.onclick=()=>show(k);tabs.append(b)});
+show('PRODUCT & OPERATIONS');
+// reveal + counters + nav highlight
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('show');
+const n=e.target.querySelector?.('[data-n]')||(e.target.dataset?.n?e.target:null);if(n&&!n.done){n.done=1;count(n)}io.unobserve(e.target)}),{threshold:.15});
+$('.rv,.kpi,.entry').forEach(x=>io.observe(x));
+function count(el){const t=+el.dataset.n,d=+(el.dataset.d||0);let s=null;
+const f=ts=>{s??=ts;const p=Math.min((ts-s)/900,1);el.textContent=(t*p).toFixed(d);if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+const links=$('nav ul a');
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+$('section[id]').forEach(s=>so.observe(s));
+</script>
+</body>
+</html>
